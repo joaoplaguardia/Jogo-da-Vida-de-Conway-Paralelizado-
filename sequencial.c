@@ -20,8 +20,11 @@ int vizinhas(int **matriz, int i, int j, int L, int C) {
     return cont;
 }
 
-void main() {
-    FILE *arquivo = fopen("entrada.txt", "r");
+void main(int argc, char *argv[]) {
+
+    char *arquivo_nome = argv[1];
+
+    FILE *arquivo = fopen(arquivo_nome, "r");
     if (arquivo == NULL) {
         perror("Erro ao abrir o arquivo");
     }
@@ -119,6 +122,8 @@ void main() {
             }
         }
     }
+
+    fclose(saida);
 
 
     for (int i = 0; i < L; i++) {
